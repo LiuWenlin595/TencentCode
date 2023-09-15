@@ -1,0 +1,13 @@
+1. Q: set_ticks() got an unexpected keyword argument 'labels'
+A:
+ax.set_yticks(np.arange(len(vegetables)))
+ax.set_yticklabels(vegetables)
+
+2. Q: TypeError: unhashable type: 'slice'
+A:
+for k, v in ax.spines.items():
+    v.set_visible(False)
+
+1和2问题其实是matplotlib版本的问题, 用的3.3.4
+3. 修改编译器不好用：针对code-runner要额外修改setting.json, 单纯修改编译器就是没用
+4. print没输出：自动配置的anaconda的python路径是pythonw.exe, 将其改为python.exe就好, 或者说直接指定python路径
